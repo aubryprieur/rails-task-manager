@@ -1,0 +1,19 @@
+<h1>Index</h1>
+
+<% @tasks.each do |task| %>
+  <h2><%= link_to task.title, task_path(task) %></h2>
+  <p><%= task.detail %></p>
+  <% if task.done == true %>
+      <%= "[x]" %>
+    <% else %>
+      <%= "[ ]" %>
+  <% end  %>
+<% end %>
+
+<div>
+  <%= link_to("new", new_task_path) %>
+</div>
+
+
+
+
